@@ -1,7 +1,10 @@
 GIT_SUMMARY := $(shell git describe --tags --dirty --always)
 REPO=msoedov/hacker-slides
 DOCKER_IMAGE := $(REPO):$(GIT_SUMMARY)
-default: repo
+default: run
+
+run:
+	go run main.go
 
 repo:
 	@echo $(DOCKER_IMAGE)
